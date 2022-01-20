@@ -1,4 +1,4 @@
-# Eclipse metadata files that can be ignored  
+### Eclipse ### 
 .classpath  
 .editorconfig  
 .factorypath  
@@ -6,8 +6,17 @@
 .project  
 .settings/  
 bin/  
-  
-target/  
-# maven project related ignore files and directories  
-.mvn/  
 target/
+ 
+### Maven ###
+target/
+.mvn/ 
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
