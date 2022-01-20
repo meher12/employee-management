@@ -1,7 +1,7 @@
-## Employee Management Project: Spring Boot + Spring Data JPA ( Hibernate)+ Spring Security + Bootstrap5 + Thymeleaf and Postgresql Database
+#### Employee Management Project: Spring Boot + Spring Data JPA ( Hibernate)+ Spring Security + Bootstrap5 + Thymeleaf and Postgresql Database
 
-#The first part:
-
+## I- The First Part:
+**** Employee Module:
 - Get all Employee 
 
 - Add a new Employee 
