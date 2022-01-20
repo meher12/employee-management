@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+
+<link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+	
+<title>Employees Management System</title>
+</head>
+<body>
+	<div class="container-md">
+	    
+		<h1> Employees List</h1>
+		<hr>
+		<a class="btn btn-primary" th:href="@{/addEmployee}">Add Employee</a>
+			<table class="table table-sm table-responsive table-striped table-hover">
+			  <thead class="table-light">
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col"> 
+			        <a class="text-dark text-decoration-none" th:href="@{'/page/' + ${currentPage} + '?sortField=firstName&sortDir=' + ${reverseSortDir}}">
+							Employee First Name</a>
+			      </th>
+			      <th scope="col"> 
+			        <a class="text-dark text-decoration-none" th:href="@{'/page/' + ${currentPage} + '?sortField=lastName&sortDir=' + ${reverseSortDir}}">
+							Employee Last Name</a>
+			       </th>
+			      <th scope="col"> 
+			         <a class="text-dark text-decoration-none" th:href="@{'/page/' + ${currentPage} + '?sortField=email&sortDir=' + ${reverseSortDir}}">
+							Employee Email</a>
+			       </th>
+			      <th>Action</th>
+			      
+			    </tr>
+			  </thead>
+			  <tbody>
+				   <tr th:each="employee : ${listEmployees}">
+				      <td scope="row" th:text="${employee?.id} ?: '(no Id found)'"></td>
+				      <td th:text="${employee.firstName} ?: '(no First Name found)'"></td>
+				      <td th:text="${employee.lastName} ?: '(no Last Name found)'"></td>
+				      <td th:text="${employee?.email} ?: '(no Email found)'"></td>
+				      <td>
+				         <a class="btn btn-success" th:href="@{/updateEmployee/{id}(id=${employee.id})}">Update</a>
+				         <a class="btn btn-danger" th:href="@{/deleteEmployee/{id}(id=${employee.id})}">Delete</a> 
+				      </td>
+				   </tr>
+			  </tbody>
+			</table>
+			<!-- Pagination  -->
+			<div th:if = "${totalPages > 1}">
+				<div class = "row col-sm-10">
+					<div class = "col-sm-2">
+						Total Rows: [[${totalItems}]] 
+					</div>
+					
+					<!-- <div class="col-sm-1"   th:style ="${currentPage == 1} ? 'visibility: hidden;' : 'visibility: visible;'">
+						<a th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${currentPage - 1}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Pre</a>
+						<span th:unless="${currentPage < totalPages}">Pre</span>
+					</div> -->
+					
+					<div class = "col-sm-1">
+						<span th:each="i: ${#numbers.sequence(1, totalPages)}">
+							<a th:if="${currentPage != i}" th:href="@{'/page/' + ${i}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">[[${i}]]</a>
+							<span th:unless="${currentPage != i}">[[${i}]]</span>  &nbsp; &nbsp;
+						</span>
+					</div>
+					<div class = "col-sm-1">
+						<a th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${currentPage + 1}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Next</a>
+						<span th:unless="${currentPage < totalPages}">Next</span>
+					</div>
+					
+					 <div class="col-sm-1">
+	    				<a th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${totalPages}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Last</a>
+						<span th:unless="${currentPage < totalPages}">Last</span>
+	   				 </div>
+				</div>
+		   </div>
+	</div>
+</body>
+</html>
