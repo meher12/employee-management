@@ -1,56 +1,13 @@
-HELP.md
-## db ##
-/src/main/resources/application.properties
+# Eclipse metadata files that can be ignored  
+.classpath  
+.editorconfig  
+.factorypath  
+.gitattributes  
+.project  
+.settings/  
+bin/  
+  
+target/  
+# maven project related ignore files and directories  
+.mvn/  
 target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### VS Code ###
-.vscode/
-
-
-# Backupfiles from mergetools #
-*.orig
-# Java Class Files #
-*.class
-# Package Files #
-*.jar
-*.war
-*.ear
-*.zip
-# Eclipse #
-/.project
-/.settings
-bin/**
-# Maven #
-target/
-/.mvn
-/.maven
-/.repository
-.flattened-pom.xml
