@@ -25,4 +25,4 @@
             <artifactId>spring-data-rest-hal-explorer</artifactId>
        </dependency>
        
-       ![My Image](images/actuator_capt2.png)
+ - see wiki for the screenshot
