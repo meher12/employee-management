@@ -13,3 +13,14 @@
 - Pagination Employee
 
 - Sorting Table Employee By Name
+
+## II- Add Actuator
+1- All the actuator endpoints will be available at http://localhost:8181/actuator.
+2- enable all of the built-in endpoints of Actuator. To do so, set the configuration in the application.properties file: 
+ management.endpoints.web.exposure.include=* 
+3- add HAL and the HAL explorer:  is a simple format that gives a consistent and easy way to hyperlink between resources in our API:
+       
+       <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-rest-hal-explorer</artifactId>
+       </dependency>
