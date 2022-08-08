@@ -14,7 +14,7 @@
 
 - Sorting Table Employee By Name
 
-## II- Add Actuator
+## II- Add Spring Boot actuator helps you monitor and manage your Spring boot application
  - All the actuator endpoints will be available at http://localhost:8181/actuator.
  - enable all of the built-in endpoints of Actuator. To do so, set the configuration in the application.properties file: 
  management.endpoints.web.exposure.include=* 
