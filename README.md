@@ -24,3 +24,5 @@
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-rest-hal-explorer</artifactId>
        </dependency>
+       
+       ![My Image](images/actuator_capt2.png)
